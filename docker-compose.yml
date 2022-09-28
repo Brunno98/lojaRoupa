@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_URL=database
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - database
+    networks:
+      - data  
+     
+  database:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_HOSTNAME=localhost
+    networks:
+      - data
+
+networks:
+  data: {}
