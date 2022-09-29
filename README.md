@@ -19,4 +19,5 @@ Bastou adicionar a dependencia do POM.xml e toda a magica foi feita:
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-ui</artifactId>
       <version>1.6.11</version>
+   </dependency>
 ```
