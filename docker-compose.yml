@@ -12,7 +12,9 @@ services:
     depends_on:
       - database
     networks:
-      - data  
+      - data
+    volumes:
+      - m2:/root/.m2
      
   database:
     image: postgres:latest
@@ -28,3 +30,6 @@ services:
 
 networks:
   data: {}
+  
+volumes:
+  m2: 
